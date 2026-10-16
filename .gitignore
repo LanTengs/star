@@ -1,0 +1,18 @@
+*.iml
+.gradle/
+build/
+local.properties
+.idea/
+.DS_Store
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+*.keystore
+*.jks
+
+# Recovered reference material from the original APK. Not part of the build and
+# not redistributable -- see README "关于原 APK 的素材".
+recovered/
+tools/

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Seed categories for the badge editor, matching the upstream app's naming. -->
+<resources>
+    <string-array name="default_categories">
+        <item>季节</item>
+        <item>活动</item>
+        <item>联名</item>
+        <item>其他</item>
+    </string-array>
+</resources>

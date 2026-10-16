@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Mirrors the original app's five settings groups. The only entry that is gone
+  is the cloud re-sync item from the "Account & language" group: this build has no INTERNET
+  permission, so there is nothing to sync against. Replaced by a local
+  file-based backup/restore pair under the "Data" group.
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        android:key="cat_account_language"
+        android:title="@string/pref_cat_account_language"
+        app:iconSpaceReserved="false">
+
+        <SwitchPreferenceCompat
+            android:key="switch_card"
+            android:title="@string/switch_card_title"
+            android:summary="@string/switch_card_summary"
+            android:defaultValue="false"
+            app:iconSpaceReserved="false" />
+
+        <ListPreference
+            android:key="language_selection"
+            android:title="@string/language_selection_title"
+            android:summary="@string/language_selection_summary"
+            android:defaultValue="system"
+            android:entries="@array/language_entries"
+            android:entryValues="@array/language_values"
+            app:iconSpaceReserved="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="cat_launch"
+        android:title="@string/pref_cat_launch"
+        app:iconSpaceReserved="false">
+
+        <EditTextPreference
+            android:key="effect_minutes"
+            android:title="@string/effect_minutes_title"
+            android:summary="@string/effect_minutes_summary"
+            android:defaultValue="10"
+            app:iconSpaceReserved="false" />
+
+        <EditTextPreference
+            android:key="cooldown_minutes"
+            android:title="@string/cooldown_minutes_title"
+            android:summary="@string/cooldown_minutes_summary"
+            android:defaultValue="15"
+            app:iconSpaceReserved="false" />
+
+        <Preference
+            android:key="target_package"
+            android:title="@string/target_package_title"
+            android:summary="@string/target_system"
+            app:iconSpaceReserved="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="cat_appearance"
+        android:title="@string/pref_cat_appearance"
+        app:iconSpaceReserved="false">
+
+        <SwitchPreferenceCompat
+            android:key="dialog_blur_enabled"
+            android:title="@string/dialog_blur_title"
+            android:summary="@string/dialog_blur_summary"
+            android:defaultValue="true"
+            app:iconSpaceReserved="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="cat_floating"
+        android:title="@string/pref_cat_floating"
+        app:iconSpaceReserved="false">
+
+        <SwitchPreferenceCompat
+            android:key="auto_hide_floating_panel"
+            android:title="@string/auto_hide_floating_panel_title"
+            android:summary="@string/auto_hide_floating_panel_summary"
+            android:defaultValue="false"
+            app:iconSpaceReserved="false" />
+
+        <SwitchPreferenceCompat
+            android:key="click_outside_to_hide"
+            android:title="@string/click_outside_to_hide_title"
+            android:summary="@string/click_outside_to_hide_summary"
+            android:defaultValue="false"
+            app:iconSpaceReserved="false" />
+
+        <SwitchPreferenceCompat
+            android:key="icon_only_floating_panel"
+            android:title="@string/icon_only_floating_panel_title"
+            android:summary="@string/icon_only_floating_panel_summary"
+            android:defaultValue="false"
+            app:iconSpaceReserved="false" />
+
+        <SwitchPreferenceCompat
+            android:key="volume_keys_toggle_floating"
+            android:title="@string/volume_keys_toggle_floating_title"
+            android:summary="@string/volume_keys_toggle_floating_summary"
+            android:defaultValue="false"
+            app:iconSpaceReserved="false" />
+
+        <SwitchPreferenceCompat
+            android:key="shake_toggle_floating"
+            android:title="@string/shake_toggle_floating_title"
+            android:summary="@string/shake_toggle_floating_summary"
+            android:defaultValue="false"
+            app:iconSpaceReserved="false" />
+
+        <com.lanteng.star.app.floating.IconPreference
+            android:key="custom_floating_icon"
+            android:title="@string/custom_floating_icon_title"
+            android:summary="@string/custom_floating_icon_summary"
+            android:defaultValue=""
+            app:iconSpaceReserved="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="cat_background"
+        android:title="@string/pref_cat_background"
+        app:iconSpaceReserved="false">
+
+        <SwitchPreferenceCompat
+            android:key="foreground_service"
+            android:title="@string/foreground_service_title"
+            android:summary="@string/foreground_service_summary"
+            android:defaultValue="false"
+            app:iconSpaceReserved="false" />
+
+        <SwitchPreferenceCompat
+            android:key="boot_startup"
+            android:title="@string/boot_startup_title"
+            android:summary="@string/boot_startup_summary"
+            android:defaultValue="false"
+            app:iconSpaceReserved="false" />
+
+        <SwitchPreferenceCompat
+            android:key="hide_recent_tasks"
+            android:title="@string/hide_recent_tasks_title"
+            android:summary="@string/hide_recent_tasks_summary"
+            android:defaultValue="false"
+            app:iconSpaceReserved="false" />
+
+        <SwitchPreferenceCompat
+            android:key="lock_recent_tasks"
+            android:title="@string/lock_recent_tasks_title"
+            android:summary="@string/lock_recent_tasks_summary"
+            android:defaultValue="false"
+            app:iconSpaceReserved="false" />
+
+        <Preference
+            android:key="battery_whitelist"
+            android:title="@string/battery_whitelist_title"
+            android:summary="@string/battery_whitelist_summary"
+            app:iconSpaceReserved="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="cat_data"
+        android:title="@string/pref_cat_data"
+        app:iconSpaceReserved="false">
+
+        <Preference
+            android:key="badge_usage_analysis"
+            android:title="@string/badge_usage_analysis_title"
+            android:summary="@string/badge_usage_analysis_summary"
+            app:iconSpaceReserved="false" />
+
+        <Preference
+            android:key="data_export"
+            android:title="@string/data_export_title"
+            android:summary="@string/data_export_summary"
+            app:iconSpaceReserved="false" />
+
+        <Preference
+            android:key="data_import"
+            android:title="@string/data_import_title"
+            android:summary="@string/data_import_summary"
+            app:iconSpaceReserved="false" />
+
+        <Preference
+            android:key="about"
+            android:title="@string/about_title"
+            android:summary="@string/about_body"
+            app:iconSpaceReserved="false" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
