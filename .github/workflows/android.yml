@@ -28,8 +28,10 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
+      - name: Accept Android SDK Licenses
+        run: |
+          mkdir -p $ANDROID_HOME/licenses
+          echo "24333f8a63b6825ea9c5514f83c2829b008b291d" > $ANDROID_HOME/licenses/android-sdk-license
 
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
